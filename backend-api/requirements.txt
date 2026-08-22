@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pillow
+numpy
+tensorflow-cpu  # remplacez par "tensorflow" si vous avez un GPU compatible
+python-dotenv
+pydantic
