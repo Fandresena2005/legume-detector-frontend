@@ -21,11 +21,16 @@ export function usePrediction() {
         body: formData,
       })
 
+      const payload = await response.json() as PredictionResult | { message?: string }
       if (!response.ok) {
-        throw new Error(`Erreur serveur (${response.status})`)
+        throw new Error(
+          'message' in payload && payload.message
+            ? payload.message
+            : `Erreur serveur (${response.status})`
+        )
       }
 
-      result.value = (await response.json()) as PredictionResult
+      result.value = payload as PredictionResult
     } catch (e) {
       error.value =
         e instanceof Error

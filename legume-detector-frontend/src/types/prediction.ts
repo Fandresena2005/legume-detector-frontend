@@ -1,6 +1,8 @@
 export interface PredictionResult {
-  classe: string
-  confiance: number
+  status: 'success'
+  prediction: string
+  confidence: number
+  probabilities?: Record<string, number> | null
 }
 
 export interface PredictionState {

@@ -6,14 +6,19 @@ const props = defineProps<{
   result: PredictionResult
 }>()
 
-const isRotten = computed(() => props.result.classe.toLowerCase().includes('rotten'))
-const confidencePct = computed(() => Math.round(props.result.confiance * 100))
+const isRotten = computed(() => {
+  const prediction = props.result.prediction.toLowerCase()
+  return prediction.includes('pourri') || prediction.includes('rotten')
+})
+const confidencePct = computed(() => Math.round(props.result.confidence))
 
 const label = computed(() =>
-  props.result.classe
+  props.result.prediction
     .replace(/_/g, ' ')
     .replace('Healthy', '— Sain')
+    .replace('healthy', '— Sain')
     .replace('Rotten', '— Pourri')
+    .replace('rotten', '— Pourri')
 )
 </script>
 
