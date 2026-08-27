@@ -1,0 +1,46 @@
+Structure du dossier pour le volume DATA
+Le numéro de série du volume est 00000072 FED2:CB0A
+D:.
+|   arbo.txt
+|   package-lock.json
+|   
+\---legume-detector-frontend
+    |   .env.example
+    |   index.html
+    |   package-lock.json
+    |   package.json
+    |   README.md
+    |   tsconfig.app.json
+    |   tsconfig.json
+    |   tsconfig.node.json
+    |   vite.config.ts
+    |   
+    +---.vscode
+    |       extensions.json
+    |       
+    +---public
+    |       favicon.svg
+    |       icons.svg
+    |       
+    \---src
+        |   App.vue
+        |   config.ts
+        |   main.ts
+        |   style.css
+        |   
+        +---assets
+        |       hero.png
+        |       vite.svg
+        |       
+        +---components
+        |       HelloWorld.vue
+        |       ImageUploader.vue
+        |       LoadingSpinner.vue
+        |       PredictionResult.vue
+        |       
+        +---composables
+        |       usePrediction.ts
+        |       
+        \---types
+                prediction.ts
+                
